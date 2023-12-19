@@ -41,7 +41,7 @@ read -p "Confirm execution (yes): " CONFIRMATION
 echo
 for STAGE in $(echo $STAGES | grep -o .); do
     STAGE_FUNCTION=${STAGE_FUNCTIONS[$STAGE-1]}
-    $STAGE_FUNCTION && ((STAGES_OK++))
+    eval $STAGE_FUNCTION && ((STAGES_OK++))
 done
 
 # Display the result of the execution
