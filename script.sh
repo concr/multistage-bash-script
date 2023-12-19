@@ -34,7 +34,7 @@ done
 
 echo
 read -p "Confirm execution (yes): " CONFIRMATION
-[[ $CONFIRMATION == "yes" ]] || { echo "Execution aborted."; exit 1; }
+[[ $CONFIRMATION == "yes" ]] || { echo; echo "Execution aborted."; exit 1; }
 
 # Execute the stages
 
@@ -45,5 +45,6 @@ for STAGE in $(echo $STAGES | grep -o .); do
 done
 
 # Display the result of the execution
+
 echo
 [[ $STAGES_OK -eq ${#STAGES} ]] && echo "All stages executed successfully." || echo "Some stages failed."
