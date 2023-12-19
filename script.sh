@@ -74,7 +74,7 @@ function echo_five {
 echo "Following stages will run:"
 echo ""
 
-loop_stages echo_stages
+loop_stages echo_stage
 
 echo ""
 read -p "Please confirm (yes): " YES
@@ -82,7 +82,7 @@ echo ""
 
 [[ $YES ]] || { echo "Aborted. Please confirm with yes to run selected stages."; exit 1; }
 
-loop_stages exec_stages
+loop_stages exec_stage
 
 echo ""
 [ $STAGES_OK -eq $STAGES_EXPECTED ] \
