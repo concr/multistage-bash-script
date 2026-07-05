@@ -5,11 +5,25 @@
 STAGES=${1:-"12345"}
 [[ $STAGES =~ ^[1-5]+$ ]] || { echo "ERROR: Invalid stage selection ('$STAGES')."; exit 1; }
 
-function echo_one { echo "one"; }
-function echo_two { echo "two"; }
-function echo_three { echo "three"; }
-function echo_four { echo "four"; }
-function echo_five { echo "five"; }
+function echo_one {
+    echo "one";
+ }
+
+function echo_two {
+     echo "two";
+}
+
+function echo_three {
+    echo "three";
+}
+
+function echo_four {
+    echo "four";
+}
+
+function echo_five {
+    echo "five";
+}
 
 STAGE_FUNCTIONS=(
     "echo_one"
@@ -47,4 +61,6 @@ done
 # Display the result of the execution
 
 echo
-[[ $STAGES_OK -eq ${#STAGES} ]] && echo "All stages executed successfully." || echo "Some stages failed."
+[[ $STAGES_OK -eq ${#STAGES} ]] \
+    && echo "All stages executed successfully." \
+    || echo "Some stages failed."
